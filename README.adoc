@@ -1,0 +1,32 @@
+*Camel RabbitMQ Example*
+
+* Description
+_This is an example of using RabbitMQ with Apache Camel_.
+_Simple example shows how to send message to a queue also how to consume message from the queue_.
+
+*Steps Required*
+
+* Install and Setup RabbitMQ
+** Download
+***	https://www.rabbitmq.com/download.html
+***	https://www.rabbitmq.com/install-windows.html
+
+** Management Plugins
+*** https://www.rabbitmq.com/management.html
+*** command to enable Rabbit MQ Web UI
+**** rabbitmq-plugins.bat enable rabbitmq_management
+**** Admin Web UI Link
+***** http://localhost:15672/#/
+
+** Admin commands to check status
+*** rabbitmqctl status
+*** rabbitmqctl stop
+*** 
+
+* Sample Project
+** Have Camel Routes for:
+*** Producer for exchange XCHGRB_D using on auto-generated temporary Q
+(after message is delivered this Q is deleted) and with no routing key
+*** Consumer: Consumes messages from exchange XCHGRB_D, on auto-generated Q
+*** Consumer: Consumes from exchange XCHGRB_A on Q name CAMELRBA and routingKey Demo
+*** Consumer: Consumes from exchange XCHGRB_B on Q name CAMELRBB
